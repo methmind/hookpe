@@ -20,6 +20,7 @@ Key Features:
     *   Trampoline generation.
     *   Correct handling of RIP-relative addressing (including emulation of absolute addressing for far jumps).
 3.  **Process Injection**: Standard `LoadLibrary` is used as a trigger. The kernel calls `NtOpenSection`, which is intercepted, mapping our hidden section instead of the disk file.
+4.  Tested only on Windows 10 (22h2).
 
 ## Build Requirements
 
