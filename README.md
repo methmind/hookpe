@@ -10,6 +10,7 @@ Key Features:
 *   **Hidden Section**: Payload is written to a temporary file within an NTFS transaction. A memory section is created from it, and then the transaction is rolled back. The file disappears from the disk, but the section remains valid in RAM.
 *   **API Hooking**: Uses the **Radiance** library to splice the `NtOpenSection` kernel function.
 *   **Load Substitution**: When attempting to load a legitimate decoy DLL (`nevermore.dll`), the hook intercepts the call and substitutes it with the hidden payload section.
+*   **Native Loader Benefits**: Unlike Manual Mapping, this technique leverages the native Windows Loader. This means the OS automatically handles complex tasks like CRT initialization, TLS callbacks, and dependency resolution, ensuring unrestricted stability and functionality of the injected payload.
 
 ## Technical Details
 
