@@ -1,0 +1,3 @@
+[submodule "external/radiance"]
+	path = external/radiance
+	url = https://github.com/methmind/radiance.git
