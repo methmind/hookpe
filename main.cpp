@@ -233,8 +233,7 @@ int main()
     // 4. Trigger LoadLibrary to invoke NtOpenSection
     // The hook will intercept the request for the decoy DLL and return our section.
     std::cout << "[*] Triggering injection via LoadLibraryA..." << std::endl;
-    auto hModule = LoadLibraryW(config::DecoyDllName);
-    if (hModule) {
+    if (const auto hModule = LoadLibraryW(config::DecoyDllName)) {
         std::cout << "[+] Payload loaded successfully at: " << hModule << std::endl;
     } else {
         std::cerr << "[-] LoadLibrary failed." << std::endl;
